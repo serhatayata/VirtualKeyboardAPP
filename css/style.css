@@ -1,0 +1,221 @@
+/* GENERAL CODES */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 12px;
+}
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+/* ---------------- */
+h1{
+    padding: 20px 0px 20px 60px;
+    font-size: 3rem;
+    border-bottom: 1px solid #004134;
+    border-bottom-left-radius: 20px;
+    background: linear-gradient(to left, #004134,white);
+}
+h3 {
+    padding:40px 0px 30px 70px;
+    font-size: 2.5rem;
+}
+#textArea1 {
+  position : absolute;
+  top:140px;
+  right:60px;
+  width:60%;
+  font-size: 2rem;
+  padding:20px;
+}
+ul {
+  padding:0px 0px 20px 70px
+}
+li {
+  font-size: 1.8rem;
+}
+.keyboard {
+    position:fixed;
+    left:0;
+    bottom:0;
+    width: 100%;
+    padding: 5px 0;
+    background:#004134;
+    box-shadow:0 0 50px rgba(0,0,0,0.5);
+    user-select : none;
+    transition:bottom 0.4s;
+    height: 300px;
+}
+.keyboard--hidden {
+  bottom: -100%;
+  transition: 1s;
+
+}
+.keyboard__keys {
+    width: 100% !important;
+    text-align:center;
+}
+.keyboard__key {
+    font-size: 2.5rem;
+    height:50px;
+    width: 5%;
+    max-width: 90px;
+    margin:3px;
+    border-radius: 4px;
+    border:none;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    outline:none;
+    cursor:pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+.keyboard__key:active {
+    background : rgba(255,255,255,0.12);
+}
+.keyboard__key--wide {
+    width: 12% !important;
+}
+.keyboard__key--extra-wide {
+    width:36%;
+    max-width: 400px;
+}
+.keyboard__key--activatable::after {
+    content:'';
+    top:10px;
+    right:10px;
+    position:absolute;
+    width:8px;
+    height: 8px;
+    background:rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+.keyboard__key--active::after {
+    background:#08ff00;
+}
+.keyboard__key--dark {
+    background: rgba(0, 0, 0, 0.25);
+}
+.keyboard-open {
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    width: 80px;
+    height: 50px;
+    background:#44b9a2;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* RESPONSIVE */
+@media screen and (min-width : 768px) and (max-width : 1000px) {
+    h1 {font-size: 2.5rem; padding: 20px 0px 20px 40px;}
+    h3 {font-size: 2.2rem; padding:40px 0px 20px 50px;}
+    li {font-size: 1.6rem;}
+    #textArea1 {
+        right:30px;
+        width:55% !important;
+    } 
+    .keyboard__key {
+        font-size:2rem;
+    }
+}
+@media screen and (min-width : 584px) and (max-width : 768px) {
+    h1 {font-size: 2rem; padding: 20px 0px 20px 40px;}
+    h3 {font-size: 1.6rem; padding: 40px 0px 20px 50px;}
+    li {font-size: 1.4rem; }
+    #textArea1 {
+        top:120px;
+        right:30px;
+        width:55%;
+        font-size: 1.8rem;
+      }
+    .keyboard__key {
+        font-size:2rem;
+    }
+}
+@media screen and (min-width : 500px) and (max-width : 584px) {
+    h1 {font-size: 2rem; padding: 20px 0px 20px 40px;}
+    h3 {display: none;}
+    ul {display: none;}
+    #textArea1 {
+        top:120px;
+        right: 5%;
+        left: 5%;
+        width:90%;
+        height: 30%;
+        font-size: 1.6rem;
+      }
+    .keyboard__key {
+        font-size: 2rem;
+        height:50px;
+        width: 6%;
+        margin:3px;
+    }
+    .keyboard__key--extra-wide {
+        width:36%;
+        max-width: 400px;
+    }
+}
+@media screen and (min-width: 450px)  and (max-width : 500px) {
+    h1 {font-size: 2rem; padding: 20px 0px 20px 40px;}
+    h3 {display: none;}
+    ul {display: none;}
+    #textArea1 {
+        top:120px;
+        right: 5%;
+        left: 5%;
+        width:90%;
+        height: 30%;
+        font-size: 1.6rem;
+    }
+    .keyboard__key {
+        font-size: 2rem;
+        height:45px;
+        width: 6%;
+        margin:3px;
+    }
+    .keyboard__key--extra-wide {
+        width:36%;
+    }
+    .keyboard {
+        height: 40%;
+    }
+}
+@media screen and (max-width : 449px) {
+    h1 {font-size: 2rem; padding: 20px 0px 20px 40px;}
+    h3 {display: none;}
+    ul {display: none;}
+    #textArea1 {
+        top:120px;
+        right: 5%;
+        left: 5%;
+        width:90%;
+        height: 30%;
+        font-size: 1.6rem;
+    }
+    .keyboard__key {
+        font-size: 1.6rem;
+        height:35px !important;
+        width: 6%;
+        margin:3px;
+    }
+    .keyboard__key--extra-wide {
+        width:36%;
+    }
+    .keyboard {
+        height: 37%;
+    }
+    .keyboard__key--activatable::after {
+        top:5px;
+        right:5px;
+        width:6px;
+        height: 6px;
+    }
+}
